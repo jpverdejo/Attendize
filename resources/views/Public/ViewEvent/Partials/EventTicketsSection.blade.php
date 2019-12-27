@@ -25,9 +25,9 @@
                                 @foreach($tickets->where('is_hidden', false) as $ticket)
                                     <tr class="ticket" property="offers" typeof="Offer">
                                         <td>
-                                <span class="ticket-title semibold" property="name">
-                                    {{$ticket->title}}
-                                </span>
+                                            <span class="ticket-title semibold" property="name">
+                                                {{$ticket->title}}
+                                            </span>
                                             <p class="ticket-descripton mb0 text-muted" property="description">
                                                 {{$ticket->description}}
                                             </p>
@@ -54,24 +54,24 @@
                                             @if($ticket->is_paused)
 
                                                 <span class="text-danger">
-                                    @lang("Public_ViewEvent.currently_not_on_sale")
-                                </span>
+                                                    @lang("Public_ViewEvent.currently_not_on_sale")
+                                                </span>
 
                                             @else
 
                                                 @if($ticket->sale_status === config('attendize.ticket_status_sold_out'))
                                                     <span class="text-danger" property="availability"
                                                           content="http://schema.org/SoldOut">
-                                    @lang("Public_ViewEvent.sold_out")
-                                </span>
+                                                        @lang("Public_ViewEvent.sold_out")
+                                                    </span>
                                                 @elseif($ticket->sale_status === config('attendize.ticket_status_before_sale_date'))
                                                     <span class="text-danger">
-                                    @lang("Public_ViewEvent.sales_have_not_started")
-                                </span>
+                                                        @lang("Public_ViewEvent.sales_have_not_started")
+                                                    </span>
                                                 @elseif($ticket->sale_status === config('attendize.ticket_status_after_sale_date'))
                                                     <span class="text-danger">
-                                    @lang("Public_ViewEvent.sales_have_ended")
-                                </span>
+                                                        @lang("Public_ViewEvent.sales_have_ended")
+                                                    </span>
                                                 @else
                                                     {!! Form::hidden('tickets[]', $ticket->id) !!}
                                                     <meta property="availability" content="http://schema.org/InStock">
@@ -119,9 +119,9 @@
                                 <tr class="checkout">
                                     <td colspan="3">
                                         @if(!$is_free_event)
-                                            <div class="hidden-xs pull-left">
-                                                <img class=""
-                                                     src="{{asset('assets/images/public/EventPage/credit-card-logos.png')}}"/>
+                                            <div class="col-sm-6 pull-left">
+                                                <img style="width:100%;"
+                                                     src="{{asset('assets/images/public/EventPage/square-credit-cards.png')}}"/>
                                                 @if($event->enable_offline_payments)
 
                                                     <div class="help-block" style="font-size: 11px;">
