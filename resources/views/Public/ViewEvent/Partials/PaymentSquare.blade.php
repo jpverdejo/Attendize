@@ -1,3 +1,8 @@
+<style>
+    .square-logo {
+        margin: 30px 20px;
+    }
+</style>
 <div class="error-message" id="error-message" role="alert" style="display: none;">
     <strong>Error!</strong>
     <span></span>
@@ -5,10 +10,10 @@
 <form class="online_payment" action="<?php echo route('postCreateOrder', ['event_id' => $event->id]); ?>" method="post" id="square-checkout-payment-form">
     <div class="form-row">
         <div class="row square-logo">
-            <img class="col-sm-12 col-sm-offset-0" src="{{asset('assets/images/public/EventPage/square-credit-cards.png')}}"/>
+            <img style="width:100%;" src="{{asset('assets/images/public/EventPage/square-credit-cards.png')}}"/>
         </div>
 
-        <div id="form-container">
+        <div id="form-container" class="col-sm-12 col-md-10 col-md-offset-1">
             <div id="sq-card"></div>
             <button id="sq-creditcard" class="btn button-credit-card" onclick="onGetCardNonce(event)">
                 <div class="la-ball-scale-ripple-multiple" id="loader-icon" style="display:none;">
@@ -148,8 +153,6 @@
 
         #form-container {
         position: relative;
-        width: 380px;
-        margin: 0 auto;
         top: 50%;
         }
 
@@ -181,12 +184,6 @@
 
         .button-credit-card:hover {
         background-color: #4281CB;
-        }
-
-
-
-        .square-logo {
-            margin:40px;
         }
 
         .error-message {
